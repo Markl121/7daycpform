@@ -1,0 +1,59 @@
+.section_gap {
+  border-bottom: 0.5rpx #c5c5c5 solid;
+}
+.section {
+  margin: 50rpx;
+  padding-bottom: 5rpx;
+  font-size:30rpx;
+  font-family: 楷书;
+}
+.description{
+  font-size:30rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+.btn-area {
+  margin: 20rpx;
+}
+
+.section__title {
+  margin: 5rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  font-family: 楷书;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  font-family: 楷书;
+}
+
+.picker {
+  text-decoration-color: black;
+}
+
+.butn{
+  background-color: #4abb3b;
+}
+
+.input{
+  font-size: 10rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}

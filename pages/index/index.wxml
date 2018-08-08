@@ -1,0 +1,267 @@
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    <open-data type="userGender" lang="zh_CN"></open-data>
+  </view>
+
+  <text class="section__title">{{motto}}</text>
+  <view class="section">{{description}}</view>
+</view>
+<view class="description">1 耐心/开朗：越高 越为人和善，积极向上</view>
+<view class="description">2 真善/纯情：越高 但单纯善良和睦</view>
+<view class="description">3 敏捷/资本：越高 处事反应速度越快，承压能力越强</view>
+<view class="description">4 人性/朴实：越高 越实在，有人缘越，为人处世得心应手</view>
+<view class="description">5 专注/责任：最高越专一，越不会出轨</view>
+<view class="container">
+  <view class="section">下面测试全是单选题</view>
+  <view class="description">最后结果是一张table画一张这样的table不知道是不是可行（每一项最高15分） 然后给一个综合战斗值
+  </view>
+  <view class="section">战斗值计算=五项指数相乘即可（大概在90万左右）</view>
+
+  <form bindsubmit="formSubmit" bindreset="formReset" class="form">
+    <view class="section">
+      <view class="section__title">1. 如果你的恋人告诉你，Ta不喜欢吃西瓜，你本能得觉得Ta的理由是什么呢</view>
+      <radio-group name="one" class="flex-col">
+        <label>
+          <radio value="8"/>觉得吃西瓜要吐子很麻烦</label>
+        <label>
+          <radio value="2"/>切起来很麻烦</label>
+        <label>
+          <radio value="4" />不喜欢西瓜的味道</label>
+        <label>
+          <radio value="6" />西瓜水份很多一吃就觉得撑</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">2. 如果你五个手指都破了，你只能包一个，你包哪个？</view>
+      <radio-group name="two" class="flex-col">
+        <label>
+          <radio value="10"/>选择大拇指</label>
+        <label>
+          <radio value="8"/>选择食指</label>
+        <label>
+          <radio value="6" />选择中指</label>
+        <label>
+          <radio value="4" />选择无名指</label>
+        <label>
+          <radio value="2" />选择小拇指</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">3. 当你走进一个森林，会遇到很多动物，你最想先遇到的是什么？</view>
+      <radio-group name="three" class="flex-col">
+        <label>
+          <radio value="a"/>兔子</label>
+        <label>
+          <radio value="b"/>猪</label>
+        <label>
+          <radio value="c" />鹿</label>
+        <label>
+          <radio value="d" />老虎</label>
+        <label>
+          <radio value="e" />狼</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">4. 你决定搬出去一个人住，可是公寓里空无一物，你最先想买什么？</view>
+      <radio-group name="four" class="flex-col">
+        <label>
+          <radio value="a"/>窗帘</label>
+        <label>
+          <radio value="b"/>床</label>
+        <label>
+          <radio value="c" />洗衣机</label>
+        <label>
+          <radio value="d" />电话</label>
+        <label>
+          <radio value="e" />冰箱</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">5. 在路上突然被工读生堵上，要你填一份怪怪的问卷，你有点怀疑资料最后的流向，所以不愿太认真填写，下列哪一个项目你会谎报？</view>
+      <radio-group name="five" class="flex-col">
+        <label>
+          <radio value="a"/>姓名</label>
+        <label>
+          <radio value="b"/>电话</label>
+        <label>
+          <radio value="c" />年龄</label>
+        <label>
+          <radio value="d" />婚姻状况</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">6. 你和朋友们一起到外面去吃饭，服务小姐刚刚帮你倒好茶水，你就不小心把水泼了出来，并且弄得满桌都是，根据习惯，你会使用以下哪种纸把桌子擦拭干净？  </view>
+      <radio-group name="six" class="flex-col">
+        <label>
+          <radio value="2"/>卷纸</label>
+        <label>
+          <radio value="4"/>湿纸巾</label>
+        <label>
+          <radio value="3" />面巾纸</label>
+        <label>
+          <radio value="1" />随手一张纸</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">7. 你的新房子正在装潢，你会在哪一部分花最多的钱？</view>
+      <radio-group name="seven" class="flex-col">
+        <label>
+          <radio value="8"/>客厅的沙发、摆设</label>
+        <label>
+          <radio value="6"/>卧室的床</label>
+        <label>
+          <radio value="4" />浴室、厨房</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">8. 如果你在一间精品店里看到一件自己十分喜欢的摆设，但价钱实在太贵了，你会怎样跟老板讲价呢？</view>
+      <radio-group name="eight" class="flex-col">
+        <label>
+          <radio value="a"/>直接向老板讲价</label>
+        <label>
+          <radio value="b"/>找个也喜欢类似东西的朋友一起买，让老板让价!</label>
+        <label>
+          <radio value="c" />一直看着那个摆件，直到老板自己主动降价！</label>
+        <label>
+          <radio value="d" />来回好多次，直到老板主动降价</label>
+        <label>
+          <radio value="e" />既然喜欢，老板又不降价，忍痛买下来！</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">9. 你面前有一杯咖啡、一罐可乐、一个苹果、一个汉堡，如果只能拿一样来吃的话，你会选哪样呢？</view>
+      <radio-group name="nine" class="flex-col">
+        <label>
+          <radio value="a"/>咖啡</label>
+        <label>
+          <radio value="b"/>可乐</label>
+        <label>
+          <radio value="c" />苹果</label>
+        <label>
+          <radio value="d" />汉堡</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">10. 一个和他吵架的夜晚，当你带着委屈哀怨的心情恍恍惚惚入睡，你觉得出现在你梦中的梦境会是？</view>
+      <radio-group name="ten" class="flex-col">
+        <label>
+          <radio value="9"/>你一个人独自在河边沉思，清澈的河水仿佛洗净了你的心灵</label>
+        <label>
+          <radio value="3"/>心仪的他满怀诚意的跟你道歉，不但说了许多甜言蜜语，还送礼物给你</label>
+        <label>
+          <radio value="5" />你进入了一个神秘的空间，那里只有一个纺织车不断地转呀转，转得你心慌</label>
+        <label>
+          <radio value="7" />你到一座庄园旅行，受到了当地居民热情的款待</label>
+        <label>
+          <radio value="1" />你身陷在一座山谷里拼命的想要逃，却不断有东西逼近你包围你，让你动弹不得</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">11. 问题：“ 幸福的恋情是［ ］”，你会在［ ］中填什么呢？</view>
+      <radio-group name="eleven" class="flex-col">
+        <label>
+          <radio value="a"/>充满夏天的感觉</label>
+        <label>
+          <radio value="b"/>俩个人在一起</label>
+        <label>
+          <radio value="c" />灿烂的</label>
+        <label>
+          <radio value="d" />温柔的</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">12. 假如跟男友或女友悠闲的散步，最喜欢走的路是如下哪种的呢?</view>
+      <radio-group name="twelve" class="flex-col">
+        <label>
+          <radio value="a"/>热闹繁华的城市大道，人群熙攘，五光十色</label>
+        <label>
+          <radio value="b"/>绵长悠远的乡间小道，令人心旷神怡</label>
+        <label>
+          <radio value="c" />空旷的大道上寂静无声，任你思绪飞扬</label>
+        <label>
+          <radio value="d" />弯蜒曲折的山路，风光别样好</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">13. 这里有5个杯子，其中4个都有毒，其中一个没有，你认为是哪一种？</view>
+      <radio-group name="thirteen" class="flex-col">
+        <label>
+          <radio value="a"/>刚挤出来的牛奶</label>
+        <label>
+          <radio value="b"/>一杯白开水</label>
+        <label>
+          <radio value="c" />半杯饮料</label>
+        <label>
+          <radio value="d" />热忽忽的咖啡</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">14. 假如某天你独自一人在个岛上迷路了这时你已经1天没吃东西了很饿很饿你会选择以下什么吃的？</view>
+      <radio-group name="fourteen" class="flex-col">
+        <label>
+          <radio value="1"/>柳橙</label>
+        <label>
+          <radio value="2"/>水煮蛋</label>
+        <label>
+          <radio value="3" />馒头</label>
+        <label>
+          <radio value="4" />香蕉</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">15. 如果一辈子只做一件家务，你会选择？</view>
+      <radio-group name="fifteen" class="flex-col">
+        <label>
+          <radio value="5"/>洗碗</label>
+        <label>
+          <radio value="7"/>拖地</label>
+        <label>
+          <radio value="9" />做饭</label>
+        <label>
+          <radio value="1" />倒垃圾</label>
+      </radio-group>
+    </view>
+
+    <view class="section">
+      <view class="section__title">16. 最后一题！请选一个方向！</view>
+      <radio-group name="sixteen" class="flex-col">
+        <label>
+          <radio value="a"/>东</label>
+        <label>
+          <radio value="b"/>南</label>
+        <label>
+          <radio value="c" />西</label>
+        <label>
+          <radio value="d" />北</label>
+      </radio-group>
+    </view>
+
+    <view class="btn-area">
+      <button formType="submit" class="butn">Submit</button>
+    </view>
+    <view class="btn-area">
+      <button formType="reset" class="butn">Reset</button>
+    </view>
+  </form>
+
+  <view class="section section_gap">
+    <view class="section__title">安省学校邮箱</view>
+    <view>请提供学校域名的邮箱，来证明你的高贵身份，例如xiaojiejie@uwaterloo.ca</view>
+  </view>
+</view>
